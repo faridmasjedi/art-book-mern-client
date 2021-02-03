@@ -36,7 +36,7 @@ function Form(props) {
         let sendObj = (props.nameComponent === "add") ? {form, name, artist, year, image} : {id, form, name, artist, year, image};
         
         if (props.nameComponent === 'add') {
-            axios.post(`http://localhost:2357/app/${props.nameComponent}`, sendObj)
+            axios.post(`https://art-book-mern.herokuapp.com/app/${props.nameComponent}`, sendObj)
             .then((promise) => {
                 id = promise.data.id;
             })
@@ -48,7 +48,7 @@ function Form(props) {
             setImage( '' );
 
         }else{
-            axios.put(`http://localhost:2357/app/update/${id}`, sendObj)
+            axios.put(`https://art-book-mern.herokuapp.com/app/update/${id}`, sendObj)
                 .then(() => props.onClick(id))
                 .catch((err) => console.log(err))
         }

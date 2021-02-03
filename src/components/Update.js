@@ -7,7 +7,7 @@ function Update(props) {
     const [result,setResult] = useState(() => []);
 
     useEffect( () => {
-        axios.get(`http://localhost:2357/app/art/${id}`)
+        axios.get(`https://art-book-mern.herokuapp.com/app/art/${id}`)
         .then((promise) => setResult(promise.data))
     },[])
     

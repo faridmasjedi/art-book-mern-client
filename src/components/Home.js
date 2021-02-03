@@ -10,7 +10,7 @@ function Home() {
 
     useEffect( () => {
         axios
-            .get('http://localhost:2357/app/get')
+            .get('https://art-book-mern.herokuapp.com/app/get')
             .then( (promise) => {
                 setResult( promise.data );
             })
@@ -21,7 +21,7 @@ function Home() {
     const artistFilter = (e) => setFilter(prev => ({...prev, artist: e.target.value}) )
     const filterHandler = () => {
         axios
-            .post('http://localhost:2357/app/filter', filter)
+            .post('https://art-book-mern.herokuapp.com/app/filter', filter)
             .then(promise => {
                 setResult(promise.data)
             })

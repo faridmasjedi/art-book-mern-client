@@ -9,7 +9,7 @@ function Art(props){
 
     useEffect( () => {
         axios
-            .get(`http://localhost:2357/app/art/${id}`)
+            .get(`https://art-book-mern.herokuapp.com/app/art/${id}`)
             .then( (promise) => {
                 if (promise.data !== undefined){
                     setRes(true);
@@ -20,7 +20,7 @@ function Art(props){
 
     const deleteHandler = () => {
         axios
-            .delete(`http://localhost:2357/app/delete/${id}`)
+            .delete(`https://art-book-mern.herokuapp.com/app/delete/${id}`)
             .then(() => console.log('delete'));
     }
 
